@@ -1,0 +1,52 @@
+:root {
+    --dusty-pink: #d8a7b1;
+    --rose: #c37b89;
+    --burgundy: #800020;
+    --light-gray: #f9f9f9;
+    --dark-gray: #333;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+  }
+
+  .portfolio-container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: linear-gradient(to bottom, var(--dusty-pink), var(--rose));
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .large-font {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--burgundy);
+  }
+
+  .about-me {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-me h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--burgundy);
+  }
+  
+  .about-me p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--dark-gray);
+  }
+  

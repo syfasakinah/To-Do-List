@@ -1,0 +1,72 @@
+<script>
+  const arrStudents = [];
+
+  class StudentRegistration {
+    username;
+    email;
+    #password;
+    #phoneNumber;
+
+    constructor(username, email, password, phoneNumber) {
+      this.username = username;
+      this.email = email;
+      this.#password = password;
+      this.#phoneNumber = phoneNumber;
+    }
+
+    static registrationForm() {
+      const username = prompt("Username");
+      const email = prompt("Email");
+      const password = prompt("Password");
+      const phoneNumber = prompt("Phone Number");
+
+      if (!email.includes("@") && !email.includes(".")) {
+        return { error: true, message: "Email Not Valid" };
+      } else if (password.length < 6 || password.length > 10) {
+        return {
+          error: true,
+          message: "Password Have Minimum & Maximum Length",
+        };
+      } else {
+        return {
+          error: false,
+          data: { username, email, password, phoneNumber },
+        };
+      }
+    }
+  }
+
+  do {
+    var selectedMenu = prompt(
+      "Select Menu: \n 1. Register Student \n 2. Show Student Data"
+    );
+
+    if (selectedMenu === "1") {
+      // Register Student
+      const result = StudentRegistration.registrationForm();
+
+      if (result.error === true) {
+        alert(result.message);
+      } else if (result.error === false) {
+        const insertedStudent = new StudentRegistration(
+          result.data.username,
+          result.data.email,
+          result.data.password,
+          result.data.phoneNumber
+        );
+        arrStudents.push(insertedStudent);
+        console.log(arrStudents);
+      }
+    } else if (selectedMenu === "2") {
+      // Show Student Data
+      // Looping
+      let displayString = "";
+      for (var i = 0; i < arrStudents.length; i++) {
+        console.log("arr std : ", arrStudents[i]);
+        const dt = arrStudents[i];
+        displayString += `Username: ${dt.username}, Email: ${dt.email}\n`;
+      }
+      alert(displayString);
+    }
+  } while (selectedMenu === "1" || selectedMenu === "2");
+</script>
